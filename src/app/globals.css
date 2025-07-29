@@ -5,7 +5,7 @@
 
 /*components*/
 .header {
-  @apply fixed w-full top-0 z-10
+  @apply absolute w-full left-0 top-0 z-10
 }
 
 .header-button {
@@ -13,26 +13,41 @@
 }
 
 .search {
-  @apply w-60
+  @apply w-40
+  sm:w-80
+  transition-all duration-200
+}
+
+.img {
+  @apply w-full min-h-dvh max-h-dvh object-cover
 }
 
 /*layout*/
 
 .wrapper {
-  @apply grid min-h-dvh grid-cols-1 pt-17
+  @apply grid min-h-dvh
+  grid-cols-[1px_auto]
+  sm:grid-cols-[1px_auto]
+  md:grid-cols-[1px_auto]
+  lg:grid-cols-[var(--container-2xs)_auto]
+  transition-all duration-200
 }
 
 .div-container {
   @apply w-full flex gap-4 px-6 py-4
 }
 
+.header-container {
+  @apply flex gap-4 px-6 py-4
+  ml-[1px]
+  sm:ml-[1px]
+  md:ml-[1px]
+  lg:ml-[var(--container-2xs)]
+  transition-all duration-200
+}
+
 .main {
-  @apply grid
-  grid-cols-2
-    sm:grid-cols-[var(--container-2xs)_auto]
-    md:grid-cols-[var(--container-2xs)_auto]
-    lg:grid-cols-[var(--container-2xs)_auto]
-  w-full
+  @apply grid grid-rows-[4.25rem_auto] w-full
 }
 
 .page {

@@ -4,6 +4,7 @@ import './globals.css';
 import { ThemeProvider } from '@/app/components/theme/theme-provider'
 import Header from '@/app/components/layouts/header'
 import {SideBar} from '@/app/components/layouts/side-bar'
+import Img from '@/app/components/layouts/img'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode; }>) {
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -28,9 +30,10 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
       >
       <div className='wrapper'>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-              <Header/>
+              <SideBar/>
+              <Img/>
               <div className='main'>
-                  <SideBar/>
+                  <Header/>
                   <div className='page'>
                       {children}
                   </div>

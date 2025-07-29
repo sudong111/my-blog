@@ -6,7 +6,7 @@ import ThemeToggle from "@/app/components/theme/theme-toggle";
 export default function Header() {
     return (
         <header className='header'>
-            <div className='div-container'>
+            <div className='header-container'>
                 <button className='header-button'><BsClipboardHeart /></button>
                 <div className='menu'>
                     <button className='header-button'>page</button>
