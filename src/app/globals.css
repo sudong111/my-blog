@@ -9,7 +9,7 @@
 }
 
 .header-button {
-  @apply w-max rounded-lg items-center justify-center text-xl transition-all duration-500 hover:bg-gray-200 dark:hover:bg-gray-700
+  @apply w-max px-2 rounded-lg items-center justify-center text-xl transition-all duration-500 hover:bg-gray-200 dark:hover:bg-gray-700
 }
 
 .search {
@@ -63,8 +63,27 @@
 }
 
 .side-bar {
-  @apply grid
-  grid-rows-[15rem_auto]
+  @apply grid grid-rows-[15rem_auto] w-full
+}
+
+.side-menu {
+  @apply flex flex-col
+}
+
+.profile {
+  @apply grid grid-rows-[10rem_auto] items-center justify-center
+}
+
+.profile-avatar {
+
+}
+
+.profile-text {
+  @apply grid grid-rows-2 w-full items-center justify-items-center
+}
+
+.name {
+  @apply font-bold
 }
 
 @theme inline {

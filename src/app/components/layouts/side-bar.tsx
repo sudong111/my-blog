@@ -1,9 +1,12 @@
+import Profile from "@/app/components/side/profile";
+import Menu from "@/app/components/side/menu"
+
 export function SideBar() {
     return (
         <div className='div-container side'>
             <div className='side-bar'>
-                <div className='profile'>profile</div>
-                <div className='side-menu'>menu</div>
+                <Profile />
+                <Menu />
             </div>
         </div>
 
