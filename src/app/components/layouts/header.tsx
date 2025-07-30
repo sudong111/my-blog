@@ -1,21 +1,25 @@
 import { BsClipboardHeart, BsFillPersonFill } from "react-icons/bs";
 import { Input } from "@/components/ui/input"
 import ThemeToggle from "@/app/components/theme/theme-toggle";
+import { Button } from "@/components/ui/button"
+import Link from "next/link";
 
 
 export default function Header() {
     return (
         <header className='header'>
             <div className='header-container'>
-                <button className='header-button'><BsClipboardHeart /></button>
+                <Link href='/'>
+                    <Button variant='ghost' className='header-button'><BsClipboardHeart /></Button>
+                </Link>
                 <div className='menu'>
-                    <button className='header-button'>page</button>
-                    <button className='header-button'>report</button>
-                    <button className='header-button'>dashboard</button>
+                    <Button variant='ghost' className='header-button'>page</Button>
+                    <Button variant='ghost' className='header-button'>report</Button>
+                    <Button variant='ghost' className='header-button'>dashboard</Button>
                 </div>
                 <div className='settings'>
                     <ThemeToggle/>
-                    <button className='header-button'><BsFillPersonFill/></button>
+                    <Button variant='ghost' className='header-button'><BsFillPersonFill/></Button>
                     <Input className='search' type="text" placeholder="Search.." />
                 </div>
             </div>

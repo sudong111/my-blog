@@ -3,6 +3,7 @@
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 import { clsx } from 'clsx'
+import Intro from "@/app/components/layouts/intro";
 
 export default function Img() {
     const { theme } = useTheme()
@@ -16,11 +17,12 @@ export default function Img() {
     }, [theme])
 
     return (
-        <div className="relative w-full h-auto">
+        <div className="flex justify-center relative w-full h-full">
+            <Intro />
             <img
-                src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWMzYzY1MWNwdXVpbzFsOWdqMXRjcmY3bDRyM2cxa2gxMnFyNWRjYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qgQUggAC3Pfv687qPC/giphy.gif"
+                src="https://i.pinimg.com/originals/e1/06/ba/e106bae3c008abea3d0d18c613c31f76.gif"
                 className={clsx(
-                    'img transition-opacity duration-500',
+                    'img',
                     theme === 'light' && isVisible ? 'opacity-100' : 'opacity-0'
                 )}
                 alt="Light"
@@ -28,7 +30,7 @@ export default function Img() {
             <img
                 src="https://i.pinimg.com/originals/90/70/32/9070324cdfc07c68d60eed0c39e77573.gif"
                 className={clsx(
-                    'absolute top-0 left-0 w-full min-h-dvh max-h-dvh object-cover transition-opacity duration-500',
+                    'img',
                     theme === 'dark' && isVisible ? 'opacity-100' : 'opacity-0'
                 )}
                 alt="Dark"

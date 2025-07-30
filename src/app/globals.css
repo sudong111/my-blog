@@ -5,11 +5,11 @@
 
 /*components*/
 .header {
-  @apply absolute w-full left-0 top-0 z-10
+  @apply fixed w-full left-0 top-0 z-10
 }
 
 .header-button {
-  @apply w-max px-2 rounded-lg items-center justify-center text-xl transition-all duration-500 hover:bg-gray-200 dark:hover:bg-gray-700
+  @apply w-max px-2 transition-all
 }
 
 .search {
@@ -19,7 +19,23 @@
 }
 
 .img {
-  @apply w-full min-h-dvh max-h-dvh object-cover
+  @apply absolute top-0 left-0 w-full h-[64.25rem] object-cover transition-opacity duration-500 z-0
+}
+
+.create-button {
+  @apply fixed right-0 bottom-0 mx-10 my-10 px-10 py-5 text-sm text-white bg-green-600 hover:bg-green-700 transition-all
+}
+
+.intro-title {
+  @apply text-8xl text-white font-light
+}
+
+.intro-trans {
+  @apply text-5xl font-light
+}
+
+.desc {
+  @apply text-2xl text-white
 }
 
 /*layout*/
@@ -34,7 +50,7 @@
 }
 
 .div-container {
-  @apply w-full flex gap-4 px-6 py-4
+  @apply w-full gap-4 px-6 py-4
 }
 
 .header-container {
@@ -47,11 +63,7 @@
 }
 
 .main {
-  @apply grid grid-rows-[4.25rem_auto] w-full
-}
-
-.page {
-  @apply flex mx-20
+  @apply grid grid-rows-[65rem_auto] w-full
 }
 
 .menu {
@@ -86,11 +98,16 @@
   @apply font-bold
 }
 
+.intro {
+  @apply flex flex-col absolute z-10 gap-4 h-full justify-center items-center
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-bit: var(--font-bit-count);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -161,6 +178,7 @@
   --sidebar-ring: oklch(0.709 0.01 56.259);
   --font-geist-sans: 'Geist', sans-serif;
   --font-geist-mono: 'Geist Mono', monospace;
+  --font-bit-count: 'Bitcount Grid Double, sans-serif';
 }
 
 .dark {
