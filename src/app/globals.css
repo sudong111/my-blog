@@ -102,6 +102,10 @@
   @apply flex flex-col absolute z-10 gap-4 h-full justify-center items-center
 }
 
+.post {
+  @apply grid grid-rows-2
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

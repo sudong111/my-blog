@@ -4,9 +4,6 @@ import './globals.css';
 import { ThemeProvider } from '@/app/components/theme/theme-provider'
 import Header from '@/app/components/layouts/header'
 import {SideBar} from '@/app/components/layouts/side-bar'
-import Img from '@/app/components/layouts/img'
-import Create from '@/app/components/posts/create'
-import Intro from "@/app/components/layouts/intro";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
