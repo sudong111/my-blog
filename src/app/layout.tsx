@@ -39,7 +39,7 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
               <SideBar/>
               <Header/>
               <div className='main'>
-                  <div className='w-full'>
+                  <div className='w-full mt-[4.25rem]'>
                       {children}
                   </div>
               </div>
