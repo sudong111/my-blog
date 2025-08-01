@@ -292,3 +292,5 @@ export const SimpleEditor = forwardRef<SimpleEditorRef>((props, ref) => {
     </div>
   )
 })
+
+SimpleEditor.displayName = 'SimpleEditor'

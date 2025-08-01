@@ -40,6 +40,10 @@
   @apply text-2xl text-white
 }
 
+.input-label {
+  @apply w-40 text-left flex-shrink-0
+}
+
 /*layout*/
 
 .wrapper {

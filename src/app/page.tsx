@@ -3,13 +3,8 @@
 import Img from "@/app/components/layouts/img";
 import Create from "@/app/components/posts/create";
 import PostCard from "@/app/components/posts/card";
-import {useEffect} from "react";
 
 export default function Home() {
-
-    useEffect(() => {
-        fetch('/api/init')
-    }, [])
 
     return (
         <div className='grid grid-rows-[65rem_auto]'>
