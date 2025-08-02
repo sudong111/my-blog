@@ -1,9 +1,20 @@
+'use client'
+
+import Profile from "@/app/components/side/profile";
+import Menu from "@/app/components/side/menu"
+import {useEffect} from "react";
+
 export function SideBar() {
+
+    useEffect(() => {
+        fetch('/api/init')
+    }, [])
+
     return (
-        <div className='div-container'>
+        <div className='div-container side'>
             <div className='side-bar'>
-                <div className='profile'>profile</div>
-                <div className='side-menu'>menu</div>
+                <Profile />
+                <Menu />
             </div>
         </div>
 

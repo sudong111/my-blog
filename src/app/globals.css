@@ -1,42 +1,75 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import '../styles/_variables.scss';
+@import '../styles/_keyframe-animations.scss';
 
 @custom-variant dark (&:is(.dark *));
 
 /*components*/
 .header {
-  @apply fixed w-full top-0 z-10
+  @apply fixed w-full left-0 top-0 z-10
 }
 
 .header-button {
-  @apply w-max rounded-lg items-center justify-center text-xl transition-all duration-500 hover:bg-gray-200 dark:hover:bg-gray-700
+  @apply w-max px-2 transition-all
 }
 
 .search {
-  @apply w-60
+  @apply w-40
+  sm:w-80
+  transition-all duration-200
+}
+
+.img {
+  @apply absolute top-0 left-0 w-full h-[64.25rem] object-cover transition-opacity duration-500 z-0
+}
+
+.create-button {
+  @apply fixed right-0 bottom-0 mx-10 my-10 px-10 py-5 text-sm text-white bg-green-600 hover:bg-green-700 transition-all
+}
+
+.intro-title {
+  @apply text-8xl text-white font-light
+}
+
+.intro-trans {
+  @apply text-5xl font-light
+}
+
+.desc {
+  @apply text-2xl text-white
+}
+
+.input-label {
+  @apply w-40 text-left flex-shrink-0
 }
 
 /*layout*/
 
 .wrapper {
-  @apply grid min-h-dvh grid-cols-1 pt-17
+  @apply grid min-h-dvh
+  grid-cols-[1px_auto]
+  sm:grid-cols-[1px_auto]
+  md:grid-cols-[1px_auto]
+  lg:grid-cols-[var(--container-2xs)_auto]
+  transition-all duration-200
 }
 
 .div-container {
-  @apply w-full flex gap-4 px-6 py-4
+  @apply w-full gap-4 px-6 py-4
+}
+
+.header-container {
+  @apply flex gap-4 px-6 py-4
+  ml-[1px]
+  sm:ml-[1px]
+  md:ml-[1px]
+  lg:ml-[var(--container-2xs)]
+  transition-all duration-200
 }
 
 .main {
-  @apply grid
-  grid-cols-2
-    sm:grid-cols-[var(--container-2xs)_auto]
-    md:grid-cols-[var(--container-2xs)_auto]
-    lg:grid-cols-[var(--container-2xs)_auto]
-  w-full
-}
-
-.page {
-  @apply flex mx-20
+  @apply grid grid-rows-[65rem_auto] w-full
 }
 
 .menu {
@@ -48,8 +81,64 @@
 }
 
 .side-bar {
-  @apply grid
-  grid-rows-[15rem_auto]
+  @apply grid grid-rows-[15rem_auto] w-full overflow-hidden
+}
+
+.side-menu {
+  @apply flex flex-col
+}
+
+.profile {
+  @apply grid grid-rows-[10rem_auto] items-center justify-center
+}
+
+.profile-avatar {
+
+}
+
+.profile-text {
+  @apply grid grid-rows-2 w-full items-center justify-items-center
+}
+
+.name {
+  @apply font-bold
+}
+
+.intro {
+  @apply flex flex-col absolute z-10 gap-4 h-full justify-center items-center
+}
+
+.post {
+  @apply grid grid-rows-2
+}
+
+.editor-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.editor-toolbar {
+  margin-bottom: 12px;
+}
+
+.editor-toolbar button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: none;
+  background: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editor-toolbar button:hover {
+  background: #ddd;
+}
+
+.editor-content {
+  min-height: 300px;
 }
 
 @theme inline {
@@ -57,6 +146,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-bit: var(--font-bit-count);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -127,6 +217,7 @@
   --sidebar-ring: oklch(0.709 0.01 56.259);
   --font-geist-sans: 'Geist', sans-serif;
   --font-geist-mono: 'Geist Mono', monospace;
+  --font-bit-count: 'Bitcount Grid Double, sans-serif';
 }
 
 .dark {

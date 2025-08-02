@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono,Bitcount_Grid_Double } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/app/components/theme/theme-provider'
 import Header from '@/app/components/layouts/header'
@@ -15,23 +15,31 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const bitCount = Bitcount_Grid_Double({
+    subsets: ['latin'],
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+    display: 'swap',
+    variable: '--font-bit-count',
+})
+
 export const metadata: Metadata = {
   title: "my-blog",
   description: "",
 };
 
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode; }>) {
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased body`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bitCount.variable} antialiased body`}
       >
       <div className='wrapper'>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <SideBar/>
               <Header/>
               <div className='main'>
-                  <SideBar/>
-                  <div className='page'>
+                  <div className='w-full mt-[4.25rem]'>
                       {children}
                   </div>
               </div>
